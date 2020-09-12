@@ -1,1 +1,1 @@
-# devops
+# Udacity Cloud Devops Nanodegree project
