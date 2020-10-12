@@ -9,12 +9,22 @@ Parameters:
     Description: An environment name that will be prefixed to resource names
     Type: String
 
-Resources:
-  Parameters:
+  MaxNumberOfInstances:
+    Description: Max required number of EC2 instances to run within the AutoScalingGroup
+    Type: String
+  
+  MinNumberOfInstances:
+    Description: Minimun required number of EC2 instances to run within the AutoScalingGroup
+    Type: String
+  
+  EC2InstanceType:
+    Description: EC2 Instance type to be used 
+    Type: String
+  
+  EC2VolumeSizeGB:
+    Description: Elastic Block Store size for the EC2 instances
+    Type: String
 
-    EnvironmentName:
-        Description: An environment name that will be prefixed to resource names
-        Type: String
 Resources:
   LBSecGroup:
     Type: AWS::EC2::SecurityGroup
@@ -102,12 +112,12 @@ Resources:
       ImageId: ami-07a29e5e945228fa1
       SecurityGroups:
       - Ref: WebServerSecGroup
-      InstanceType: t2.medium
+      InstanceType: !Ref EC2InstanceType
       IamInstanceProfile: !Ref ProfileWithRolesForOurApp
       BlockDeviceMappings:
       - DeviceName: "/dev/sdk"
         Ebs:
-          VolumeSize: '10'
+          VolumeSize: !Ref EC2VolumeSizeGB
   WebAppGroup:
     Type: AWS::AutoScaling::AutoScalingGroup
     Properties:
@@ -116,8 +126,8 @@ Resources:
           !Sub "${EnvironmentName}-PRIV-NETS"
       LaunchConfigurationName:
         Ref: WebAppLaunchConfig
-      MinSize: '4'
-      MaxSize: '4'
+      MinSize: !Ref MinNumberOfInstances
+      MaxSize: !Ref MaxNumberOfInstances
       TargetGroupARNs:
       - Ref: WebAppTargetGroup
   WebAppLB:
@@ -167,7 +177,14 @@ Resources:
 
 Outputs:
   WebAppLB: 
-    Description: WebAppLB Endpoint
+    Description: The Udagram LoadBalancer URL Endpoint
     Value: !GetAtt WebAppLB.DNSName
     Export:
       Name: !Sub ${EnvironmentName}-WebAppLB-SN
+   
+  WebAppTargetGroup: 
+    Description: The TargetGroup name
+    Value: !GetAtt WebAppTargetGroup.TargetGroupName
+    Export:
+      Name: !Sub ${EnvironmentName}-WebAppTargetGroup-SN
+  

@@ -2,5 +2,21 @@
 	{
 		"ParameterKey": "EnvironmentName",
 		"ParameterValue": "Nahuel-Udagram"
-	}
+    },
+    {
+        "ParameterKey":"MinNumberOfInstances",
+        "ParameterValue":"4"
+    },
+    {
+        "ParameterKey":"MaxNumberOfInstances",
+        "ParameterValue":"4"
+    },
+    {
+        "ParameterKey":"EC2InstanceType",
+        "ParameterValue":"t2.medium"
+    },
+    {
+        "ParameterKey":"EC2VolumeSizeGB",
+        "ParameterValue":"10"
+    }
 ]
