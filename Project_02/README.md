@@ -7,9 +7,9 @@
 ### Remember to configure your aws account with a key
 `aws configure`
 
+![Deployment Diagram](Diagram.PNG)
 
-
-## Example Windows
+## Deployment using bat script for Windows
 
 ### Deploy network infrastructure
 `.\create.bat nahuel-udagram-network nahuel-udagram-network.yml nahuel-udagram-network-parameters.json --region=us-west-2`
