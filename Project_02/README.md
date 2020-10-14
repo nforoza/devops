@@ -6,6 +6,8 @@
 
 ### Remember to configure your aws account with a key
 `aws configure`
+ 
+## Deployment Diagram
 
 ![Deployment Diagram](Diagram.PNG)
 
