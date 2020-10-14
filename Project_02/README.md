@@ -1,2 +1,2 @@
-#Deploy a high-availabilty web app using CloudFormation
+# Deploy a high-availabilty web app using CloudFormation
 
