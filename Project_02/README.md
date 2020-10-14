@@ -1,1 +1,2 @@
-Running Project URL: http://nahue-webap-1t3mj08iaoap5-742507013.us-west-2.elb.amazonaws.com/
+#Deploy a high-availabilty web app using CloudFormation
+
