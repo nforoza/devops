@@ -1,8 +1,8 @@
 # Deploy a high-availabilty web app using CloudFormation
 
 ### Pre Requisites
-- Install AWS Cli https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
 - Open an AWS Account
+- Install AWS Cli https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html
 
 ### Remember to configure your aws account with a key
 `aws configure`
@@ -11,14 +11,13 @@
 
 ![Deployment Diagram](Diagram.PNG)
 
-## Deployment using bat script for Windows
+## Deployment using script for Windows  
 
-### Deploy network infrastructure
+#### Deploy network infrastructure
 `.\create.bat nahuel-udagram-network nahuel-udagram-network.yml nahuel-udagram-network-parameters.json --region=us-west-2`
 
-### Deploy servers  
+#### Deploy servers  
 `.\create.bat nahuel-udagram-servers nahuel-udagram-servers.yml nahuel-udagram-server-parameters.json --region=us-west-2`
-
 
 ## License
 
