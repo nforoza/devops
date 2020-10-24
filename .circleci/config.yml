@@ -11,7 +11,7 @@ jobs:
       - run: 
           name: "An echo"
           command: echo $MESSAGE
-          enviroment:
+          environment:
             MESSAGE: Hello
   print_world:
     docker: 
@@ -20,7 +20,7 @@ jobs:
       - run:
           name: Echo enviroment variable 
           command:  "echo $MESSAGE"
-          enviroment:
+          environment:
             MESSAGE: World
           
 # Orchestrate or schedule a set of jobs
