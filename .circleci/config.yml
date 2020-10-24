@@ -21,7 +21,7 @@ jobs:
       -image: circleci/base:2020.01
     steps:
       - run:
-          name:Echoes World
+          name: Echoes World
           command: echo world!
 # Orchestrate or schedule a set of jobs
 workflows:
