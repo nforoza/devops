@@ -5,16 +5,21 @@ orbs:
   welcome: circleci/welcome-orb@0.4.1
 jobs:
   print_hello:
+    enviroment:
+      - MESSAGE: "This is pipeline id <<pipeline.id>> Hello"
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo Hello          
+      - run: echo $MESSAGE          
 
   print_world:
     docker: 
       - image: circleci/node:13.8.0
+    enviroment:
+      - MESSAGE: World!
     steps:
-      - run: echo world!
+      - run: echo $MESSAGE
+      
 # Orchestrate or schedule a set of jobs
 workflows:
   # Name the workflow "welcome"
