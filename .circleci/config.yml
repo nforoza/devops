@@ -6,17 +6,13 @@ jobs:
     docker:
       - image: circleci/base:2020.01
     steps:
-      - run:
-          name: Echoes hello
-          command: echo Hello
+      - run: echo Hello          
 
   print_world:
     docker: 
-      -image: circleci/base:2020.01
+      - image: circleci/base:2020.01
     steps:
-      - run:
-          name: Echoes World
-          command: echo world!
+      - run: echo world!
 # Orchestrate or schedule a set of jobs
 workflows:
   # Name the workflow "welcome"
