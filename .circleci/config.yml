@@ -5,10 +5,10 @@ orbs:
   welcome: circleci/welcome-orb@0.4.1
 jobs:
   print_hello:
-    enviroment:
-      - MESSAGE: "This is pipeline id <<pipeline.id>> Hello"
     docker:
       - image: circleci/node:13.8.0
+    enviroment:
+      - MESSAGE: "This is pipeline id <<pipeline.id>> Hello"
     steps:
       - run: echo $MESSAGE          
 
