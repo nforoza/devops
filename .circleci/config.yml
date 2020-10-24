@@ -3,10 +3,6 @@ version: 2.1
 
 jobs:
   print_hello:
-    #Enviroment variables
-    enviroment:
-      MESSAGE: Hello
-    #docker image for the job 
     docker:
       - image: circleci/base:2020.01
     steps:
@@ -15,8 +11,6 @@ jobs:
           command: echo Hello
 
   print_world:
-    enviroment:
-      MESSAGE: World! !
     docker: 
       -image: circleci/base:2020.01
     steps:
