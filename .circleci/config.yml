@@ -12,16 +12,16 @@ jobs:
           name: "An echo"
           command: echo $MESSAGE 
           enviroment:
-            MESSAGE: "Hello"
+            MESSAGE: Hello
   print_world:
     docker: 
       - image: circleci/node:13.8.0
     steps:
       - run:
-          name: Echoes 
+          name: Echo enviroment variable 
           command:  echo $MESSAGE
           enviroment:
-            MESSAGE: "World!"
+            MESSAGE: World
           
 # Orchestrate or schedule a set of jobs
 workflows:
