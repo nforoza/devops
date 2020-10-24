@@ -19,7 +19,7 @@ jobs:
     steps:
       - run:
           name: Echo enviroment variable 
-          command:  "echo $MESSAGE"
+          command:  "echo This step variable $MESSAGE and this is my name Project enviroment $NAME"
           environment:
             MESSAGE: World
           
