@@ -7,19 +7,22 @@ jobs:
   print_hello:
     docker:
       - image: circleci/node:13.8.0
-    enviroment:
-      - MESSAGE: "This is pipeline id <<pipeline.id>> Hello"
     steps:
-      - run: echo $MESSAGE          
-
+      - run: 
+          name: "An echo"
+          command: echo $MESSAGE 
+          enviroment:
+            MESSAGE: "Hello"
   print_world:
     docker: 
       - image: circleci/node:13.8.0
-    enviroment:
-      - MESSAGE: World!
     steps:
-      - run: echo $MESSAGE
-      
+      - run:
+          name: Echoes 
+          command:  echo $MESSAGE
+          enviroment:
+            MESSAGE: "World!"
+          
 # Orchestrate or schedule a set of jobs
 workflows:
   # Name the workflow "welcome"
