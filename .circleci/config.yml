@@ -10,7 +10,7 @@ jobs:
     steps:
       - run: 
           name: "An echo"
-          command: echo $MESSAGE 
+          command: "echo $MESSAGE"
           enviroment:
             MESSAGE: Hello
   print_world:
@@ -19,7 +19,7 @@ jobs:
     steps:
       - run:
           name: Echo enviroment variable 
-          command:  echo $MESSAGE
+          command:  "echo $MESSAGE"
           enviroment:
             MESSAGE: World
           
